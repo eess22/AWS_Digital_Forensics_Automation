@@ -17,7 +17,7 @@
 
 ##  공격 시나리오
 
-<img width="960" alt="스크린샷 2025-05-21 21 22 57" src="https://github.com/user-attachments/assets/37dae95f-29c2-4c6f-ba66-bc9b8ea4be9c" />
+<img width="960" alt="스크린샷 2025-05-21 21 22 34" src="https://github.com/user-attachments/assets/c4799623-6251-4a4c-ba6e-e683bb19904d" />
 
 ### Step 1: 취약점 발견
 
@@ -74,7 +74,7 @@ ___
 ### 🛠️ setup.sh 요약
 
 - **웹 사용자 정보 탈취**  
-  `web_user_log.py` 실행을 통해 웹 로그를 분석하고 로그인 시도, 세션 쿠키 등을 수집
+  `collect_info.py` 실행을 통해 웹 로그를 분석하고 로그인 시도, 세션 쿠키 등을 수집
 
 - **네트워크 패킷 감청**  
   `pcap.py`를 통해 서버 내에서 발생하는 패킷을 실시간으로 스니핑하여 계정 정보 등 민감 데이터 탈취

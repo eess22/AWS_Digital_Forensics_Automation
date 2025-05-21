@@ -1,4 +1,4 @@
-# AWS_Digital_forensics_automation
+# AWS_Digital_Forensics_Automation
 
 이 프로젝트는 AWS 환경에서 침해 사고 발생 시 디지털 포렌식 자동화 시스템을 구축하는 데 목적이 있습니다. GuardDuty 경고를 기점으로 Step Functions를 통한 자동화된 대응 및 분석을 수행합니다.
 

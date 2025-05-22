@@ -1,0 +1,93 @@
+{
+  "Comment": "Forensic Automation Workflow (L1-1 ~ L1-3 and L5 병렬 포함)",
+  "StartAt": "L1_InitialParallel",
+  "States": {
+    "L1_InitialParallel": {
+      "Type": "Parallel",
+      "Branches": [
+        {
+          "StartAt": "L1-1_SendNotification",
+          "States": {
+            "L1-1_SendNotification": {
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:::function:sendEmailWithNotification",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "L1-2_BlockMaliciousIP",
+          "States": {
+            "L1-2_BlockMaliciousIP": {
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:::function:AddMaliciousIPToNACL",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "L1-3_MemoryCapture",
+          "States": {
+            "L1-3_MemoryCapture": {
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:::function:Memory_Collect_1",
+              "End": true
+            }
+          }
+        }
+      ],
+      "Next": "L2_SessionAndNetworkState"
+    },
+    "L2_SessionAndNetworkState": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:::function:Memory_Collect_2",
+      "Next": "L3_IsolateInstance"
+    },
+    "L3_IsolateInstance": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:::function:IsolatedInstance",
+      "Next": "L4_CreateSnapshot"
+    },
+    "L4_CreateSnapshot": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:::function:Snapshot",
+      "Next": "L5_ParallelCollection"
+    },
+    "L5_ParallelCollection": {
+      "Type": "Parallel",
+      "Branches": [
+        {
+          "StartAt": "L5A_CollectDiskArtifacts",
+          "States": {
+            "L5A_CollectDiskArtifacts": {
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:::function:Non_Volatility_Collect",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "L5B_AnalyzeCloudTrail",
+          "States": {
+            "L5B_AnalyzeCloudTrail": {
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:::function:CloudTrail_Lambda",
+              "End": true
+            }
+          }
+        }
+      ],
+      "Next": "L6_AnalyzeAllArtifacts"
+    },
+    "L6_AnalyzeAllArtifacts": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:::function:Forensic_Analysis",
+      "Next": "L7_SendReport"
+    },
+    "L7_SendReport": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:::function:sendEmailWithReport",
+      "End": true
+    }
+  }
+}

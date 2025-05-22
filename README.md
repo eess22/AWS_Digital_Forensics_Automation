@@ -8,7 +8,8 @@
   
  ## 구성도
 
-<img width="975" alt="스크린샷 2025-05-22 10 02 46" src="https://github.com/user-attachments/assets/fbecd5b4-a301-4a27-aa8d-b6b5b2467fce" />
+<img width="1303" alt="image" src="https://github.com/user-attachments/assets/ee6bf9d1-6f63-4404-9b0f-e325db1a1543" />
+
 
 
 ##  공격 및 포렌식 핵심 요약

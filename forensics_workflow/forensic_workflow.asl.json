@@ -1,5 +1,5 @@
 {
-  "Comment": "Forensic Automation Workflow (L1-1 ~ L1-3 and L5 병렬 포함)",
+  "Comment": "Forensic Automation Workflow",
   "StartAt": "L1_InitialParallel",
   "States": {
     "L1_InitialParallel": {

@@ -8,9 +8,7 @@
   
  ## 구성도
 
-<img width="1303" alt="image" src="https://github.com/user-attachments/assets/ee6bf9d1-6f63-4404-9b0f-e325db1a1543" />
-
-
+<img width="1147" alt="image" src="https://github.com/user-attachments/assets/59fa6a6d-01f5-491e-8c57-669edd5ffb72" />
 
 ##  공격 및 포렌식 핵심 요약
 

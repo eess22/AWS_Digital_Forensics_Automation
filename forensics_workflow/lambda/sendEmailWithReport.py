@@ -7,8 +7,8 @@ import json
 import io
 
 S3_BUCKET_NAME = 'forensic-result-bucket'
-SENDER = 'n4mchun@gmail.com'
-RECIPIENT = 'n4mchun@gmail.com'
+SENDER = '{email-address}'
+RECIPIENT = '{email-address}'
 
 def lambda_handler(event, context):
     ses = boto3.client('ses')
